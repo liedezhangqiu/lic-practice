@@ -1,8 +1,6 @@
 #FROM registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-doc-sub:lic-jdk8
 FROM java:8
-#VOLUME  /tmp
 MAINTAINER project
-ARG JAR_FILE
 ADD /target/lic-microservice-base-provider-1.0-SNAPSHOT.jar app.jar
 EXPOSE 9008
 ENTRYPOINT java -Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8 -jar app.jar

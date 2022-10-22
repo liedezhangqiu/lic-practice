@@ -1,7 +1,7 @@
 FROM lic-jdk8
 MAINTAINER /tmp
 ARG JAR_FILE
-ADD /target/${JAR_FILE} app.jar
+ADD /target/lic-microservice-base-provider-1.0-SNAPSHOT.jar app.jar
 EXPOSE 2188
 ENTRYPOINT java ${JAVA_OPTS} -Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8 -jar app.jar
 

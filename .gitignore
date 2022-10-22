@@ -1,0 +1,6 @@
+# Project exclude paths
+/lic-microservice-base-facade/target/
+/lic-microservice-base-provider/target/
+/lic-microservice-gateway/target/
+/lic-microservice-user-facade/target/
+/lic-microservice-user-provider/target/

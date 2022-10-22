@@ -1,0 +1,15 @@
+
+
+spring:
+  application:
+    name: lic-microservice-user-service
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        register-enabled: true
+      server-addr: 192.168.0.103:8848
+
+
+

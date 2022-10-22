@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.lic</groupId>
+    <artifactId>lic-practice</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>lic-microservice-base-facade</module>
+        <module>lic-microservice-base-provider</module>
+        <module>lic-microservice-gateway</module>
+        <module>lic-microservice-user-provider</module>
+        <module>lic-microservice-user-facade</module>
+    </modules>
+
+    <name>lic-practice</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring.boot.version>1.5.8.RELEASE</spring.boot.version>
+<!--        <spring-cloud-gateway-varsion>Hoxton.SR5</spring-cloud-gateway-varsion>-->
+    </properties>
+
+    <dependencies>
+
+    </dependencies>
+
+    <build>
+    </build>
+</project>

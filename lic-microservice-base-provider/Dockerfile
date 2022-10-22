@@ -1,4 +1,5 @@
-FROM registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-doc-sub:lic-jdk8
+#FROM registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-doc-sub:lic-jdk8
+FROM java:8
 VOLUME /tmp
 MAINTAINER project
 ARG JAR_FILE

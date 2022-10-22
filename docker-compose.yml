@@ -3,6 +3,9 @@ services:
   lic-microservice-base-provider:
     image: registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-microservice-base-provider:main
     container_name: lic-microservice-base-provider
+    build:
+      context: ../
+      dockerfile: lic-practice/lic-microservice-base-provider
     ports:
       - "9008:9008"
     environment:

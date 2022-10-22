@@ -60,6 +60,13 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <finalName>${project.name}</finalName>
+                </configuration>
+            </plugin>
             <!-- docker的maven插件 -->
             <plugin>
                 <groupId>com.spotify</groupId>
@@ -72,19 +79,19 @@
                         <phase>package</phase>
                         <goals>
                             <goal>build</goal>
-<!--                            <goal>push</goal>-->
+                           <goal>push</goal>
                         </goals>
                     </execution>
                 </executions>
-                <!--registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-doc-sub-->
-                <configuration>
-                    <repository>registry.cn-shenzhen.aliyuncs.com/lic-doc/${project.artifactId}</repository>
-                    <tag>latest</tag>
-                    <!-- 构建参数，指定jar包名称 -->
-                    <buildArgs>
-                        <JAR_FILE>${project.name}.jar</JAR_FILE>
-                    </buildArgs>
-                </configuration>
+
+<!--                <configuration>-->
+<!--                    <repository>registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-microservice-base-provider</repository>-->
+<!--                    <tag>latest</tag>-->
+<!--                    &lt;!&ndash; 构建参数，指定jar包名称 &ndash;&gt;-->
+<!--                    <buildArgs>-->
+<!--                        <JAR_FILE>${project.name}.jar</JAR_FILE>-->
+<!--                    </buildArgs>-->
+<!--                </configuration>-->
             </plugin>
         </plugins>
     </build>

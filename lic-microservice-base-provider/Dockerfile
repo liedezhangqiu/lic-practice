@@ -1,5 +1,6 @@
 FROM registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-doc-sub:lic-jdk8
-MAINTAINER /tmp
+VOLUME /tmp
+MAINTAINER project
 ARG JAR_FILE
 ADD /target/lic-microservice-base-provider-1.0-SNAPSHOT.jar app.jar
 EXPOSE 2188

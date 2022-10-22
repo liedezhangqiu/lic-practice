@@ -1,9 +1,9 @@
-FROM anapsix/alpine-java:8_server-jre_unlimited
+FROM lic-jdk8
 MAINTAINER t
 ARG JAR_FILE
 ADD target/${JAR_FILE} /opt/app.jar
-EXPOSE 9180
-ENTRYPOINT java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8 -jar /opt/app.jar
+EXPOSE 2188
+ENTRYPOINT java ${JAVA_OPTS} -Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8 -jar /data/jar/app.jar
 
 # 演示环境GC参数：JAVA_OPS='-Xmx512m -Xms256m -XX:+UnlockDiagnosticVMOptions -XX:+UseConcMarkSweepGC -XX:+UseCMSInitiatingOccupancyOnly
 #  -XX:CMSInitiatingOccupancyFraction=70 -XX:AutoBoxCacheMax=20000 -XX:-UseBiasedLocking -XX:-UseCounterDecay

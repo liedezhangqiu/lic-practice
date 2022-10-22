@@ -59,6 +59,33 @@
 
 
     <build>
-
+        <plugins>
+            <!-- docker的maven插件 -->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>1.4.3</version>
+                <executions>
+                    <!--执行 mvn package 时 自动构建docker镜像并推送到仓库 -->
+                    <execution>
+                        <id>default</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+<!--                            <goal>push</goal>-->
+                        </goals>
+                    </execution>
+                </executions>
+                <!--registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-doc-sub-->
+                <configuration>
+                    <repository>registry.cn-shenzhen.aliyuncs.com/lic-doc/${project.artifactId}</repository>
+                    <tag>latest</tag>
+                    <!-- 构建参数，指定jar包名称 -->
+                    <buildArgs>
+                        <JAR_FILE>${project.name}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>

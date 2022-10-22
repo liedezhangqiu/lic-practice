@@ -4,7 +4,7 @@ VOLUME /tmp
 MAINTAINER project
 ARG JAR_FILE
 ADD /target/lic-microservice-base-provider-1.0-SNAPSHOT.jar app.jar
-EXPOSE 2188
+EXPOSE 9008
 ENTRYPOINT java -Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8 -jar app.jar
 
 # 演示环境GC参数：JAVA_OPS='-Xmx512m -Xms256m -XX:+UnlockDiagnosticVMOptions -XX:+UseConcMarkSweepGC -XX:+UseCMSInitiatingOccupancyOnly

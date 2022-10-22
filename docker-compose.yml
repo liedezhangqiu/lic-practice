@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  lic-microservice-base-provider:
+    image: registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-microservice-base-provider:main
+    container_name: lic-microservice-base-provider
+    ports:
+      - "9008:9008"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+    network_mode: host
+    networks:
+      - net

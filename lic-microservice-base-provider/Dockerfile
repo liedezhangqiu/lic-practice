@@ -1,9 +1,11 @@
-#FROM registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-doc-sub:lic-jdk8
-FROM java:8
+#ROM registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-doc-sub
+FROM java:8u45-jdk
 MAINTAINER project
-ADD /target/lic-microservice-base-provider-1.0-SNAPSHOT.jar /tmp/app.jar
+WORKDIR /tmp
+COPY . .
+#ADD ./../target/lic-microservice-base-provider-1.0-SNAPSHOT.jar /tmp/app.jar
 EXPOSE 9008
-ENTRYPOINT java -Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8 -jar /tmp/app.jar
+ENTRYPOINT java -Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8 -jar app.jar
 
 # 演示环境GC参数：JAVA_OPS='-Xmx512m -Xms256m -XX:+UnlockDiagnosticVMOptions -XX:+UseConcMarkSweepGC -XX:+UseCMSInitiatingOccupancyOnly
 #  -XX:CMSInitiatingOccupancyFraction=70 -XX:AutoBoxCacheMax=20000 -XX:-UseBiasedLocking -XX:-UseCounterDecay

@@ -84,14 +84,14 @@
                     </execution>
                 </executions>
 
-                <!--                <configuration>-->
-                <!--                    <repository>registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-microservice-base-provider</repository>-->
-                <!--                    <tag>latest</tag>-->
-                <!--                    &lt;!&ndash; 构建参数，指定jar包名称 &ndash;&gt;-->
-                <!--                    <buildArgs>-->
-                <!--                        <JAR_FILE>${project.name}.jar</JAR_FILE>-->
-                <!--                    </buildArgs>-->
-                <!--                </configuration>-->
+                <configuration>
+                    <repository>registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-microservice-base-provider</repository>
+                    <tag>latest</tag>
+                    <!-- 构建参数，指定jar包名称 -->
+                    <buildArgs>
+                        <JAR_FILE>${project.name}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
             </plugin>
         </plugins>
     </build>

@@ -1,5 +1,3 @@
-
-
 spring:
   application:
     name: lic-microservice-base-service
@@ -13,3 +11,20 @@ spring:
 
 
 
+hystrix:
+  metrics:
+    enabled: true
+  dashboard:
+    proxy-stream-allow-list: "*"
+
+
+feign:
+  hystrix:
+    enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: "*"
+        include: hystrix.stream
+      base-path: /

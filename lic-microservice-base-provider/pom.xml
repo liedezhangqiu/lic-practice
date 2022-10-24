@@ -19,6 +19,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <fastjson.version>1.2.7</fastjson.version>
     </properties>
 
     <dependencies>
@@ -40,6 +41,13 @@
             <artifactId>spring-boot-starter-web</artifactId>
             <version>2.3.2.RELEASE</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>2.2.6.RELEASE</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-bootstrap</artifactId>
@@ -55,44 +63,98 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
             <version>2.2.5.RELEASE</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
+        <!-- 验证码 -->
+        <dependency>
+            <groupId>com.github.axet</groupId>
+            <artifactId>kaptcha</artifactId>
+            <version>0.0.9</version>
+        </dependency>
+
+        <!--断路器 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <version>2.2.10.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.4.2</version>
+        </dependency>
+        <!--断路器 dashboard-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>2.3.2.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+            <version>2.2.10.RELEASE</version>
+        </dependency>
+
+        <!-- spring security -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-security</artifactId>-->
+<!--            <version>2.2.5.RELEASE</version>-->
+<!--        </dependency>-->
+
     </dependencies>
 
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <finalName>${project.name}</finalName>
+                    <mainClass>cn.lic.microservice.base.provider.BaseApplication</mainClass>
                 </configuration>
-            </plugin>
-            <!-- docker的maven插件 -->
-            <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>dockerfile-maven-plugin</artifactId>
-                <version>1.4.3</version>
                 <executions>
-                    <!--执行 mvn package 时 自动构建docker镜像并推送到仓库 -->
                     <execution>
-                        <id>default</id>
-                        <phase>package</phase>
                         <goals>
-                            <goal>build</goal>
-                            <goal>push</goal>
+                            <goal>repackage</goal>
                         </goals>
                     </execution>
                 </executions>
-
-                <configuration>
-                    <repository>registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-microservice-base-provider</repository>
-                    <tag>latest</tag>
-                    <!-- 构建参数，指定jar包名称 -->
-                    <buildArgs>
-                        <JAR_FILE>${project.name}.jar</JAR_FILE>
-                    </buildArgs>
-                </configuration>
             </plugin>
+
+            <!-- docker的maven插件 -->
+<!--            <plugin>-->
+<!--                <groupId>com.spotify</groupId>-->
+<!--                <artifactId>dockerfile-maven-plugin</artifactId>-->
+<!--                <version>1.4.3</version>-->
+<!--                <executions>-->
+<!--                    &lt;!&ndash;执行 mvn package 时 自动构建docker镜像并推送到仓库 &ndash;&gt;-->
+<!--                    <execution>-->
+<!--                        <id>default</id>-->
+<!--                        <phase>package</phase>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                            <goal>push</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+
+<!--                <configuration>-->
+<!--                    <repository>registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-microservice-base-provider</repository>-->
+<!--                    <tag>latest</tag>-->
+<!--                    &lt;!&ndash; 构建参数，指定jar包名称 &ndash;&gt;-->
+<!--                    <buildArgs>-->
+<!--                        <JAR_FILE>${project.name}.jar</JAR_FILE>-->
+<!--                    </buildArgs>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+
         </plugins>
     </build>
 </project>

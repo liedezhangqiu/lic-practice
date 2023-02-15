@@ -1,0 +1,4 @@
+# Run Listeners
+org.springframework.boot.SpringApplicationRunListener=\
+org.springframework.boot.context.event.EventPublishingRunListener,\
+cn.lic.microservice.base.provider.listener.TestListener

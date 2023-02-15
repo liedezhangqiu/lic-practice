@@ -1,0 +1,243 @@
+[
+  {
+    'collectionCount': 8,
+    'collectionTime': 58,
+    'lastGcInfo': {
+      'compositeType': {
+        'className': 'javax.management.openmbean.CompositeData',
+        'description': 'CompositeType for GC info for PS Scavenge',
+        'typeName': 'sun.management.PS Scavenge.GcInfoCompositeType'
+      },
+      'duration': 20,
+      'endTime': 278592,
+      'id': 8,
+      'memoryUsageAfterGc': {
+        'Compressed Class Space': {
+          'committed': 6422528,
+          'init': 0,
+          'max': 1073741824,
+          'used': 5822304
+        },
+        'PS Survivor Space': {
+          'committed': 24641536,
+          'init': 11010048,
+          'max': 24641536,
+          'used': 24617256
+        },
+        'PS Old Gen': {
+          'committed': 184549376,
+          'init': 179306496,
+          'max': 2863661056,
+          'used': 29708608
+        },
+        'Metaspace': {
+          'committed': 45744128,
+          'init': 0,
+          'max': -1,
+          'used': 42717144
+        },
+        'PS Eden Space': {
+          'committed': 368050176,
+          'init': 67108864,
+          'max': 1376256000,
+          'used': 0
+        },
+        'Code Cache': {
+          'committed': 9043968,
+          'init': 2555904,
+          'max': 134217728,
+          'used': 8984256
+        }
+      },
+      'memoryUsageBeforeGc': {
+        'Compressed Class Space': {
+          'committed': 6422528,
+          'init': 0,
+          'max': 1073741824,
+          'used': 5822304
+        },
+        'PS Survivor Space': {
+          'committed': 19922944,
+          'init': 11010048,
+          'max': 19922944,
+          'used': 19914312
+        },
+        'PS Old Gen': {
+          'committed': 184549376,
+          'init': 179306496,
+          'max': 2863661056,
+          'used': 24761240
+        },
+        'Metaspace': {
+          'committed': 45744128,
+          'init': 0,
+          'max': -1,
+          'used': 42717144
+        },
+        'PS Eden Space': {
+          'committed': 273678336,
+          'init': 67108864,
+          'max': 1386741760,
+          'used': 273678336
+        },
+        'Code Cache': {
+          'committed': 9043968,
+          'init': 2555904,
+          'max': 134217728,
+          'used': 8984256
+        }
+      },
+      'startTime': 278572
+    },
+    'memoryPoolNames': [
+      'PS Eden Space',
+      'PS Survivor Space'
+    ],
+    'name': 'PS Scavenge',
+    'notificationInfo': [
+      {
+        'description': 'GC Notification',
+        'name': 'javax.management.Notification',
+        'notifTypes': [
+          'com.sun.management.gc.notification'
+        ]
+      }
+    ],
+    'objectName': {
+      'canonicalKeyPropertyListString': 'name=PS Scavenge,type=GarbageCollector',
+      'domain': 'java.lang',
+      'domainPattern': False,
+      'keyPropertyList': {
+        'name': 'PS Scavenge',
+        'type': 'GarbageCollector'
+      },
+      'keyPropertyListString': 'type=GarbageCollector,name=PS Scavenge',
+      'pattern': False,
+      'propertyListPattern': False,
+      'propertyPattern': False,
+      'propertyValuePattern': False
+    },
+    'valid': True
+  },
+  {
+    'collectionCount': 2,
+    'collectionTime': 36,
+    'lastGcInfo': {
+      'compositeType': {
+        'className': 'javax.management.openmbean.CompositeData',
+        'description': 'CompositeType for GC info for PS MarkSweep',
+        'typeName': 'sun.management.PS MarkSweep.GcInfoCompositeType'
+      },
+      'duration': 22,
+      'endTime': 1426,
+      'id': 2,
+      'memoryUsageAfterGc': {
+        'Compressed Class Space': {
+          'committed': 4980736,
+          'init': 0,
+          'max': 1073741824,
+          'used': 4636680
+        },
+        'PS Survivor Space': {
+          'committed': 11010048,
+          'init': 11010048,
+          'max': 11010048,
+          'used': 0
+        },
+        'PS Old Gen': {
+          'committed': 184549376,
+          'init': 179306496,
+          'max': 2863661056,
+          'used': 20132648
+        },
+        'Metaspace': {
+          'committed': 36274176,
+          'init': 0,
+          'max': -1,
+          'used': 34446096
+        },
+        'PS Eden Space': {
+          'committed': 191365120,
+          'init': 67108864,
+          'max': 1400897536,
+          'used': 0
+        },
+        'Code Cache': {
+          'committed': 6946816,
+          'init': 2555904,
+          'max': 134217728,
+          'used': 6925376
+        }
+      },
+      'memoryUsageBeforeGc': {
+        'Compressed Class Space': {
+          'committed': 4980736,
+          'init': 0,
+          'max': 1073741824,
+          'used': 4636680
+        },
+        'PS Survivor Space': {
+          'committed': 11010048,
+          'init': 11010048,
+          'max': 11010048,
+          'used': 10986176
+        },
+        'PS Old Gen': {
+          'committed': 112721920,
+          'init': 179306496,
+          'max': 2863661056,
+          'used': 21730520
+        },
+        'Metaspace': {
+          'committed': 36274176,
+          'init': 0,
+          'max': -1,
+          'used': 34446096
+        },
+        'PS Eden Space': {
+          'committed': 191365120,
+          'init': 67108864,
+          'max': 1400897536,
+          'used': 0
+        },
+        'Code Cache': {
+          'committed': 6946816,
+          'init': 2555904,
+          'max': 134217728,
+          'used': 6925376
+        }
+      },
+      'startTime': 1404
+    },
+    'memoryPoolNames': [
+      'PS Eden Space',
+      'PS Survivor Space',
+      'PS Old Gen'
+    ],
+    'name': 'PS MarkSweep',
+    'notificationInfo': [
+      {
+        'description': 'GC Notification',
+        'name': 'javax.management.Notification',
+        'notifTypes': [
+          'com.sun.management.gc.notification'
+        ]
+      }
+    ],
+    'objectName': {
+      'canonicalKeyPropertyListString': 'name=PS MarkSweep,type=GarbageCollector',
+      'domain': 'java.lang',
+      'domainPattern': False,
+      'keyPropertyList': {
+        'name': 'PS MarkSweep',
+        'type': 'GarbageCollector'
+      },
+      'keyPropertyListString': 'type=GarbageCollector,name=PS MarkSweep',
+      'pattern': False,
+      'propertyListPattern': False,
+      'propertyPattern': False,
+      'propertyValuePattern': False
+    },
+    'valid': True
+  }
+]

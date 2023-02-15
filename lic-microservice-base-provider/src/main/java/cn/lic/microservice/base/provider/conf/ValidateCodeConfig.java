@@ -10,6 +10,10 @@ import java.util.Properties;
 @Configuration
 public class ValidateCodeConfig {
 
+    /**
+     * 验证码 bean
+     * @return
+     */
     @Bean
     public DefaultKaptcha kaptchaProducer() {
         Properties properties = new Properties();

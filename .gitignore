@@ -4,3 +4,5 @@
 /lic-microservice-gateway/target/
 /lic-microservice-user-facade/target/
 /lic-microservice-user-provider/target/
+/jstack_log/
+/.vscode/

@@ -13,9 +13,11 @@
         <module name="lic-microservice-user-provider" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="lic-gateway" target="1.7" />
-      <module name="lic-microservice-base-handler" target="8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="lic-microservice-base-provider" options="" />
+    </option>
   </component>
 </project>

@@ -22,11 +22,7 @@ public class BaseController {
 
     private static final String hName = "execution.isolation.thread.timeoutInMilliseconds";
 
-    @HystrixCommand(fallbackMethod = "fb",
-            commandProperties = {
-                    @HystrixProperty(name = hName, value = "3000")
-            }
-    )
+    @HystrixCommand(fallbackMethod = "fb", commandProperties = {@HystrixProperty(name = hName, value = "3000")})
     @RequestMapping("hb")
     public String hb() throws InterruptedException {
         System.out.println(".....");
@@ -50,14 +46,7 @@ public class BaseController {
      *
      * @return
      */
-    @HystrixCommand(fallbackMethod = "getNameFallBack",
-            commandProperties = {
-                    @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),
-                    @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),
-                    @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"),
-                    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60"),
-            }
-    )
+    @HystrixCommand(fallbackMethod = "getNameFallBack", commandProperties = {@HystrixProperty(name = "circuitBreaker.enabled", value = "true"), @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"), @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"), @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60"),})
 
     public static String getName() {
         return hName;

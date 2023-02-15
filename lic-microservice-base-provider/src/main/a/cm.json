@@ -1,0 +1,20 @@
+[
+  {
+    'compilationTimeMonitoringSupported': True,
+    'name': 'HotSpot 64-Bit Tiered Compilers',
+    'objectName': {
+      'canonicalKeyPropertyListString': 'type=Compilation',
+      'domain': 'java.lang',
+      'domainPattern': False,
+      'keyPropertyList': {
+        'type': 'Compilation'
+      },
+      'keyPropertyListString': 'type=Compilation',
+      'pattern': False,
+      'propertyListPattern': False,
+      'propertyPattern': False,
+      'propertyValuePattern': False
+    },
+    'totalCompilationTime': 1518
+  }
+]

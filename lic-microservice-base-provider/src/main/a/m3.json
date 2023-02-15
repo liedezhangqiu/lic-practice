@@ -1,0 +1,32 @@
+[
+  {
+    'arch': 'aarch64',
+    'availableProcessors': 8,
+    'committedVirtualMemorySize': 425218670592,
+    'freePhysicalMemorySize': 93372416,
+    'freeSwapSpaceSize': 0,
+    'maxFileDescriptorCount': 10240,
+    'name': 'Mac OS X',
+    'objectName': {
+      'canonicalKeyPropertyListString': 'type=OperatingSystem',
+      'domain': 'java.lang',
+      'domainPattern': False,
+      'keyPropertyList': {
+        'type': 'OperatingSystem'
+      },
+      'keyPropertyListString': 'type=OperatingSystem',
+      'pattern': False,
+      'propertyListPattern': False,
+      'propertyPattern': False,
+      'propertyValuePattern': False
+    },
+    'openFileDescriptorCount': 167,
+    'processCpuLoad': 0,
+    'processCpuTime': 4235969000,
+    'systemCpuLoad': 0,
+    'systemLoadAverage': 2.93701171875,
+    'totalPhysicalMemorySize': 17179869184,
+    'totalSwapSpaceSize': 0,
+    'version': '12.6'
+  }
+]

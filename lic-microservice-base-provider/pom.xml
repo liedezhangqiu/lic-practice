@@ -30,6 +30,23 @@
         <!--            <version>2.2.5.RELEASE</version>-->
         <!--        </dependency>-->
 
+        <!--自定义maven依赖-->
+        <dependency>
+            <!--随意，建议统一用自己公司域名-->
+            <artifactId>lic-practice</artifactId>
+            <groupId>cn.lic</groupId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre/lib/rt.jar</systemPath>
+        </dependency>
+
+        <!--py4j        -->
+        <dependency>
+            <groupId>net.sf.py4j</groupId>
+            <artifactId>py4j</artifactId>
+            <version>0.10.7</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
@@ -101,23 +118,40 @@
         </dependency>
 
         <!-- spring security -->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-security</artifactId>-->
-<!--            <version>2.2.5.RELEASE</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-starter-security</artifactId>-->
+        <!--            <version>2.2.5.RELEASE</version>-->
+        <!--        </dependency>-->
 
     </dependencies>
 
 
     <build>
-        <plugins>
 
+        <plugins>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>2.5</version>-->
+<!--                <configuration>-->
+<!--                    <source>1.8</source>-->
+<!--                    <target>1.8</target>-->
+<!--                    <encoding>UTF-8</encoding>-->
+<!--                    <compilerArguments>-->
+<!--                        <verbose/>-->
+<!--                        <bootclasspath>/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre/lib/rt.jar-->
+<!--                        </bootclasspath>-->
+<!--                    </compilerArguments>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!--                <version>2.7.0</version>-->
                 <configuration>
                     <mainClass>cn.lic.microservice.base.provider.BaseApplication</mainClass>
+                    <addResources>true</addResources>
                 </configuration>
                 <executions>
                     <execution>
@@ -129,32 +163,50 @@
             </plugin>
 
             <!-- docker的maven插件 -->
-<!--            <plugin>-->
-<!--                <groupId>com.spotify</groupId>-->
-<!--                <artifactId>dockerfile-maven-plugin</artifactId>-->
-<!--                <version>1.4.3</version>-->
-<!--                <executions>-->
-<!--                    &lt;!&ndash;执行 mvn package 时 自动构建docker镜像并推送到仓库 &ndash;&gt;-->
-<!--                    <execution>-->
-<!--                        <id>default</id>-->
-<!--                        <phase>package</phase>-->
-<!--                        <goals>-->
-<!--                            <goal>build</goal>-->
-<!--                            <goal>push</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
+            <!--            <plugin>-->
+            <!--                <groupId>com.spotify</groupId>-->
+            <!--                <artifactId>dockerfile-maven-plugin</artifactId>-->
+            <!--                <version>1.4.3</version>-->
+            <!--                <executions>-->
+            <!--                    &lt;!&ndash;执行 mvn package 时 自动构建docker镜像并推送到仓库 &ndash;&gt;-->
+            <!--                    <execution>-->
+            <!--                        <id>default</id>-->
+            <!--                        <phase>package</phase>-->
+            <!--                        <goals>-->
+            <!--                            <goal>build</goal>-->
+            <!--                            <goal>push</goal>-->
+            <!--                        </goals>-->
+            <!--                    </execution>-->
+            <!--                </executions>-->
 
-<!--                <configuration>-->
-<!--                    <repository>registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-microservice-base-provider</repository>-->
-<!--                    <tag>latest</tag>-->
-<!--                    &lt;!&ndash; 构建参数，指定jar包名称 &ndash;&gt;-->
-<!--                    <buildArgs>-->
-<!--                        <JAR_FILE>${project.name}.jar</JAR_FILE>-->
-<!--                    </buildArgs>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
+            <!--                <configuration>-->
+            <!--                    <repository>registry.cn-shenzhen.aliyuncs.com/lic-doc/lic-microservice-base-provider</repository>-->
+            <!--                    <tag>latest</tag>-->
+            <!--                    &lt;!&ndash; 构建参数，指定jar包名称 &ndash;&gt;-->
+            <!--                    <buildArgs>-->
+            <!--                        <JAR_FILE>${project.name}.jar</JAR_FILE>-->
+            <!--                    </buildArgs>-->
+            <!--                </configuration>-->
+            <!--            </plugin>-->
 
         </plugins>
+        <resources>
+            <!-- 打包src同目录下的lib内的jar-->
+<!--            <resource>-->
+<!--                <directory>/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre/lib</directory>-->
+<!--                <targetPath>BOOT-INF/lib/</targetPath>-->
+<!--                <includes>-->
+<!--                    <include>rt.jar</include>-->
+<!--                </includes>-->
+<!--            </resource>-->
+            <!--打包resources目录下全部文件-->
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
+
     </build>
 </project>

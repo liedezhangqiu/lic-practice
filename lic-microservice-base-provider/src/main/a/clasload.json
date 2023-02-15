@@ -1,0 +1,21 @@
+[
+  {
+    'loadedClassCount': 9041,
+    'objectName': {
+      'canonicalKeyPropertyListString': 'type=ClassLoading',
+      'domain': 'java.lang',
+      'domainPattern': False,
+      'keyPropertyList': {
+        'type': 'ClassLoading'
+      },
+      'keyPropertyListString': 'type=ClassLoading',
+      'pattern': False,
+      'propertyListPattern': False,
+      'propertyPattern': False,
+      'propertyValuePattern': False
+    },
+    'totalLoadedClassCount': 9049,
+    'unloadedClassCount': 8,
+    'verbose': False
+  }
+]
